@@ -1,0 +1,129 @@
+/*
+ * RGB FX - left half (zmkdp, 8 LEDs).
+ *
+ * Adapted from sofle's RGB FX overlay for zmkdp's 8-LED underglow per half.
+ * Canvas: 0 (left outer) to 300 (right outer), gap 80-220 for third part.
+ * Left half x: 0 (outer) to 80 (inner).
+ *
+ * key-pixels: 18 entries per row (7 left + 7 right + 4 third),
+ * matching the matrix transform in zmkdp.dtsi. Left keys map to their
+ * nearest LED; remote keys (right/third) point to the inner-edge pixel
+ * so ripples enter from the seam.
+ */
+
+#include <rgb_fx.dtsi>
+#include <dt-bindings/zmk/rgb_fx.h>
+
+/ {
+    chosen {
+        zmk,rgb-fx = &fx_group;
+    };
+
+    rgb_fx: rgb_fx {
+        compatible = "zmk,rgb-fx";
+        drivers = <&led_strip>;
+        chain-lengths = <8>;
+        pixels
+            = <&pixel 80 0>,   /*  0 = LED#1 inner top */
+              <&pixel 80 30>,   /*  1 = LED#2 inner middle */
+              <&pixel 80 60>,   /*  2 = LED#3 inner bottom */
+              <&pixel 40 0>,    /*  3 = LED#4 center top */
+              <&pixel 40 30>,   /*  4 = LED#5 center middle */
+              <&pixel 40 60>,   /*  5 = LED#6 center bottom */
+              <&pixel 0 0>,     /*  6 = LED#7 outer top */
+              <&pixel 0 60>;    /*  7 = LED#8 outer bottom */
+        key-pixels
+            = <3 4 5 6 7 0 0  0 0 0 0 0 0 0  0 0 0 0
+               3 4 5 6 7 0 0  0 0 0 0 0 0 0  0 0 0 0
+               3 4 5 6 7 0 0  0 0 0 0 0 0 0  0 0 0 0
+               3 4 5 6 7 0 0  0 0 0 0 0 0 0  0 0 0 0
+               3 4 5 6 7 0 0  0 0 0 0 0 0 0  0 0 0 0>;
+    };
+
+    fx_gradient: fx_gradient {
+        compatible = "zmk,rgb-fx-linear-gradient";
+        pixels = <0 1 2 3 4 5 6 7>;
+        colors = <HSL(160, 100, 50) HSL(280, 100, 50) HSL(20, 100, 50)>;
+        angle = <15>;
+        duration = <8>;
+    };
+
+    fx_ripple: fx_ripple {
+        compatible = "zmk,rgb-fx-ripple";
+        pixels = <0 1 2 3 4 5 6 7>;
+        color = <HSL(200, 100, 50)>;
+        duration = <800>;
+        ripple-width = <30>;
+        buffer-size = <8>;
+    };
+
+    fx_sparkle: fx_sparkle {
+        compatible = "zmk,rgb-fx-sparkle";
+        pixels = <0 1 2 3 4 5 6 7>;
+        colors = <HSL(180, 100, 60) HSL(300, 100, 60)>;
+        duration = <3>;
+    };
+
+    fx_solid: fx_solid {
+        compatible = "zmk,rgb-fx-solid";
+        pixels = <0 1 2 3 4 5 6 7>;
+        colors = <HSL(30, 100, 45) HSL(330, 100, 45)>;
+        duration = <12>;
+    };
+
+    fx_fire: fx_fire {
+        compatible = "zmk,rgb-fx-linear-gradient";
+        pixels = <0 1 2 3 4 5 6 7>;
+        colors = <HSL(0, 100, 45) HSL(25, 100, 50) HSL(45, 100, 55)>;
+        angle = <90>;
+        duration = <4>;
+    };
+
+    fx_ocean: fx_ocean {
+        compatible = "zmk,rgb-fx-linear-gradient";
+        pixels = <0 1 2 3 4 5 6 7>;
+        colors = <HSL(210, 100, 45) HSL(180, 100, 50) HSL(150, 90, 45)>;
+        angle = <0>;
+        duration = <15>;
+    };
+
+    fx_gold: fx_gold {
+        compatible = "zmk,rgb-fx-sparkle";
+        pixels = <0 1 2 3 4 5 6 7>;
+        colors = <HSL(40, 100, 55) HSL(55, 100, 65)>;
+        duration = <2>;
+    };
+
+    fx_pink: fx_pink {
+        compatible = "zmk,rgb-fx-ripple";
+        pixels = <0 1 2 3 4 5 6 7>;
+        color = <HSL(320, 100, 55)>;
+        duration = <500>;
+        ripple-width = <35>;
+        buffer-size = <8>;
+    };
+
+    fx_sunset: fx_sunset {
+        compatible = "zmk,rgb-fx-linear-gradient";
+        pixels = <0 1 2 3 4 5 6 7>;
+        colors = <HSL(25, 100, 50) HSL(355, 100, 50) HSL(330, 100, 50)
+                  HSL(285, 100, 50) HSL(235, 100, 50)>;
+        angle = <0>;
+        gradient-width = <300>;
+        duration = <0>;
+    };
+
+    fx_heatmap: fx_heatmap {
+        compatible = "zmk,rgb-fx-heatmap";
+        pixels = <0 1 2 3 4 5 6 7>;
+        color = <HSL(190, 100, 55)>;
+        duration = <1200>;
+    };
+
+    fx_group: fx_group {
+        compatible = "zmk,rgb-fx-control-group";
+        fx = <&fx_gradient &fx_ripple &fx_sparkle &fx_solid
+              &fx_fire &fx_ocean &fx_gold &fx_pink &fx_sunset &fx_heatmap>;
+        brightness-steps = <5>;
+    };
+};

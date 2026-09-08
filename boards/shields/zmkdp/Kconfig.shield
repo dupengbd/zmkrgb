@@ -1,0 +1,8 @@
+config SHIELD_ZMKDP_LEFT
+    def_bool $(shields_list_contains,zmkdp_left)
+
+config SHIELD_ZMKDP_RIGHT
+    def_bool $(shields_list_contains,zmkdp_right)
+
+config SHIELD_ZMKDP_THIRD
+    def_bool $(shields_list_contains,zmkdp_third)
