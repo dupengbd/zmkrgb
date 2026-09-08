@@ -151,8 +151,8 @@
 //               |     |      |      |      |  SPACE |        | ENTER |      |       |       |      |
             bindings = <
 &bt BT_CLR    &bt BT_SEL 0     &bt BT_SEL 1            &bt BT_SEL 2     &bt BT_SEL      3 &bt BT_SEL 4               &trans                &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans 
-&kp GRAVE     &kp RA(E)       &rgbfx RGBFX_TOGGLE(0)   &rgbfx RGBF      &oledanim       &kp BSPC                      &trans              &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans                  
-&kp LBRC     &kp RBRC       &rgbfx RGBFX_HUE_DOWN(0)  &rgbfx RGBFX_HUE_UP(0)       &rgbfx RGBFX_TOGGLE(0) &trans      &trans               &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans                                    
+&kp GRAVE   &rgbfx RGBFX_NEXT(0) &kp GRAVE     &kp RA(E)       &rgbfx RGBFX_TOGGLE(0)   &rgbfx RGBF           &kp BSPC                      &trans              &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans                  
+&kp LBRC     &oledanim        &rgbfx RGBFX_HUE_DOWN(0)  &rgbfx RGBFX_HUE_UP(0)       &rgbfx RGBFX_TOGGLE(0) &trans      &trans               &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans                                    
 &studio_unlock  &rgbfx RGBFX_DIM(0) &rgbfx RGBFX_BRIGHTEN(0)  &rgbfx RGBFX_TOGGLE(0) &trans   &trans               &trans                &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans 
                           &trans       &trans       &trans                   &trans                    
             >;
