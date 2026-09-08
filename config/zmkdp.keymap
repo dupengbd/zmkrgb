@@ -197,6 +197,14 @@
  * is applied after the shield, so it is the one that actually wins.
  * Verified in the generated devicetree, not just assumed. */
 &left_encoder {
+    status = "okay";
+};
+&right_encoder {
+    status = "okay";
+};
+
+
+&left_encoder {
     steps = <60>;
 };
 
