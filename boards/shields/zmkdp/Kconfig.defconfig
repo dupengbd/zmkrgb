@@ -40,10 +40,6 @@ config ZMK_DISPLAY
 
 if ZMK_DISPLAY
 
-# 使用 codekeeb/zmk-nice-oled fork 的自定义状态屏幕
-config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-    default y
-
 config I2C
     default y
 
@@ -87,9 +83,6 @@ config ZMK_DISPLAY
     default y
 
 if ZMK_DISPLAY
-
-config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-    default y
 
 config I2C
     default y
