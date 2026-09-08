@@ -150,11 +150,11 @@
 // |       |ZMKSt|     |      | Bri- | Bri+ |        |        |       |      |       |       |      |   \   |       |
 //               |     |      |      |      |  SPACE |        | ENTER |      |       |       |      |
             bindings = <
-&trans     &kp F1         &kp F2       &kp F3       &kp F4                   &kp F5                 &trans                                       &trans   &kp F6     &kp F7     &kp F8           &kp F9     &kp F10    &kp DEL    &trans &trans &trans &trans 
-&kp GRAVE  &kp F11        &kp F12      &kp RA(E)    &rgbfx RGBFX_TOGGLE(0)   &rgbfx RGBFX_NEXT(0)   &trans                                       &trans   &trans     &trans     &kp UP           &oledanim  &trans     &kp BSPC    &trans &trans &trans &trans 
-&trans     &trans         &kp LBRC     &kp RBRC     &rgbfx RGBFX_HUE_DOWN(0) &rgbfx RGBFX_HUE_UP(0)&trans                                       &trans    &trans     &kp LEFT   &kp DOWN         &kp RIGHT  &trans     &kp PIPE    &trans &trans &trans &trans 
-&trans     &studio_unlock &trans       &trans       &rgbfx RGBFX_DIM(0)      &rgbfx RGBFX_BRIGHTEN(0)  &rgbfx RGBFX_TOGGLE(0)&trans               &trans  &oledanim  &trans     &trans     &trans           &trans     &kp BSLH   &trans    &trans &trans &trans &trans 
-                          &trans       &trans       &trans                   &trans                    &trans                    &trans     &trans     &trans     &trans           &trans
+&bt BT_CLR    &bt BT_SEL 0     &bt BT_SEL 1            &bt BT_SEL 2     &bt BT_SEL      3 &bt BT_SEL 4               &trans                &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans 
+&kp GRAVE     &kp RA(E)       &rgbfx RGBFX_TOGGLE(0)   &rgbfx RGBF      &oledanim       &kp BSPC                      &trans              &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans                  
+&kp LBRC     &kp RBRC       &rgbfx RGBFX_HUE_DOWN(0)  &rgbfx RGBFX_HUE_UP(0)       &rgbfx RGBFX_TOGGLE(0) &trans      &trans               &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans                                    
+&studio_unlock  &rgbfx RGBFX_DIM(0) &rgbfx RGBFX_BRIGHTEN(0)  &rgbfx RGBFX_TOGGLE(0) &trans   &trans               &trans                &trans     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL    &trans &trans &trans &trans 
+                          &trans       &trans       &trans                   &trans                    
             >;
 
             sensor-bindings = <&enc_l1 &enc_r1>;
