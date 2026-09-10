@@ -49,7 +49,6 @@
         prechargep = <0x22>;
         segment-remap;
         com-invdir;
-        com-pins=<0x12>;
         com-sequential;
         inversion-on;
     };
